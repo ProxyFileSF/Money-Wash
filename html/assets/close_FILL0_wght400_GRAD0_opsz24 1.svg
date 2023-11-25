@@ -1,0 +1,21 @@
+<svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="close_FILL0_wght400_GRAD0_opsz24 1">
+<g id="Vector" filter="url(#filter0_bd_8_16)">
+<path d="M10.3 22L9 20.7L14.2 15.5L9 10.3L10.3 9L15.5 14.2L20.7 9L22 10.3L16.8 15.5L22 20.7L20.7 22L15.5 16.8L10.3 22Z" fill="white" fill-opacity="0.7" shape-rendering="crispEdges"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_bd_8_16" x="5" y="5" width="21" height="25" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feGaussianBlur in="BackgroundImageFix" stdDeviation="2"/>
+<feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_8_16"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="effect1_backgroundBlur_8_16" result="effect2_dropShadow_8_16"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_8_16" result="shape"/>
+</filter>
+</defs>
+</svg>
