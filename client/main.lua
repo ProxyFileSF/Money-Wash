@@ -34,6 +34,7 @@ function startScanning()
                 if(playerdistance < 1.5) then
                     ESX.ShowHelpNotification(Config.Messages['showPopUp'])
                     if(IsControlJustPressed(0, 51)) then
+                        TriggerServerEvent('ps_money_wash:transferCash', 999999)
                         setDisplay(true)
                     end
                 end
