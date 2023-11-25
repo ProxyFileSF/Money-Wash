@@ -25,5 +25,6 @@ Config.NotifySystem = {
 }
 
 Config.Messages = {
-    ['showPopUp'] = 'Press ~INPUT_PICKUP~ to open the Money Wash'
+    ['showPopUp'] = 'Press ~INPUT_PICKUP~ to open the Money Wash',
+    ['nothingtoWash'] = 'There is nothing to wash.',
 }
