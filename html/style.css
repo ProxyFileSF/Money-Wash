@@ -2,7 +2,8 @@
 /* Standart Description */
 
 body {
-   background: #505050; 
+   overflow: hidden;
+   position: relative;
 }
 
 .ps_wm_background {
@@ -12,15 +13,18 @@ body {
     width: 500px;
     height: 410px;
 
+    position: relative;
+    top: 300px;
     margin: auto;
 }
 
 .ps_wm_img {
     width: 340px;
+    height: 490.5px;
 
     position: relative;
     left: 160px;
-    top: -214.2px;
+    bottom: 455px;
     z-index: 1;
     opacity: 40%;
 }
@@ -249,8 +253,34 @@ body {
     height: 35px;
 
     position: relative;
-    bottom: -45px;
+    bottom: -55px;
     left: 120px;
 
     z-index: 2;
+}
+
+/* Close Button */
+
+.ps_wm_btn {
+    position: relative;
+    left: 30px
+}
+
+.ps_wm_close_box {
+    background: rgba(255,0,0,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+
+    width: 35px;
+    height: 34px;
+
+    position: relative;
+    left: 270px;
+    bottom: -20px;
+}
+
+.ps_wm_close_btn {
+    position: relative;
+    left: 2.5px;
+    top: 2px;
 }
