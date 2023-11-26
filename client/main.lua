@@ -45,6 +45,6 @@ function startScanning()
 end
 
 Citizen.CreateThread(function()
-    Citizen.Wait(2000)
+    Citizen.Wait(3500)
     startScanning()
 end)

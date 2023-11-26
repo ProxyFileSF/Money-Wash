@@ -26,7 +26,7 @@ ui_page 'html/ui.html'
 
 files {
     'html/ui.html',
-    'html/ui_app.js',
+    'html/app.js',
     'html/style.css',
     'html/jquery-3.7.1.min.js',
     'html/assets/*'

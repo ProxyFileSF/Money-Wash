@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Pompiere&family=Quicksand:wght@300;400;500;600;700&display=swap');
+/* Standart Description */
+
+body {
+   background: #505050; 
+}
+
+.ps_wm_background {
+    background: #121212;
+    border-radius: 10px;
+
+    width: 500px;
+    height: 410px;
+
+    margin: auto;
+}
+
+.ps_wm_img {
+    width: 340px;
+
+    position: relative;
+    left: 160px;
+    top: -214.2px;
+    z-index: 1;
+    opacity: 40%;
+}
+
+/* Title Description */
+
+.ps_wm_bg_title {
+    background: #FF7A00;
+    border-radius: 100px;
+
+    width: 2.0px;
+    height: 45px;
+
+    position: relative;
+    left: 15px;
+    top: 15px;
+}
+
+.ps_wm_bg_description_1 {
+    color: white;
+    font-family: 'Quicksand';
+    font-weight: lighter;
+    font-size: 19px;
+
+    width: 300px;
+    height: 0px;
+    
+    position: relative;
+    left: 10px;
+}
+
+.ps_wm_bg_description_2 {
+    font-size: 16px;
+    font-weight: lighter;
+}
+
+.ps_wm_bg_description_3 {
+    font-size: 16px;
+    font-weight: lighter;
+    color: #FFB470;
+}
+
+.ps_wm_bg_description_4 {
+    font-size: 16px;
+    font-weight: lighter;
+}
+
+.ps_wm_bg_description_5 {
+    font-size: 16px;
+    font-weight: lighter;
+    color: #FFB470;
+}
+
+.ps_wm_bg_location {
+    font-family: 'Quicksand';
+    font-weight: lighter;
+    width: 300px;
+    color: #8F8F8F;
+
+    position: relative;
+    left: 10px;
+    top: 3px;
+}
+
+/* Amount Box */
+
+.ps_wm_input {
+    background: #FF7A00;
+    border-radius: 100px;
+
+    width: 2.0px;
+    height: 80px;
+
+    position: relative;
+    left: 15px;
+    top: 21px;
+}
+
+.ps_wm_input_box {
+    background: rgba(255,255,255,0.02);
+    border-radius: 3px;
+    backdrop-filter
+    : blur(6px);
+
+    width: 465px;
+    height: 80px;
+
+    position: relative;
+    left: 10px;
+    z-index: 2;
+}
+
+.ps_wm_input_text {
+    font-family: 'Quicksand';
+    font-weight: lighter;
+    font-size: 18px;
+    color: white;
+
+    position: relative;
+    left: 100px;
+    top: 5px
+}
+
+.ps_wm_input_text2 {
+    font-weight: normal;
+}
+
+.ps_wm_input_amount {
+    background: rgb(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    color: white;
+    font-family: 'Quicksand';
+    font-weight: normal;
+
+    border: 2px solid rgba(135,104,75,0.10);
+    border-radius: 7px;
+
+    width: 250px;
+    height: 25px;
+
+    position: absolute;
+    left: 110px;
+    top: 35px;
+}
+
+.ps_wm_input_amount::placeholder {
+    position: relative;
+    left: 5px
+}
+
+.ps_wm_input_amount:hover {
+    border: 3px solid rgba(255,127,0,0.20);
+}
+
+/* Empty Box */
+
+.ps_wm_empty {
+    background: #FF7A00;
+    border-radius: 100px;
+
+    width: 2.0px;
+    height: 40px;
+
+    position: relative;
+    left: 15px;
+    top: 31px;
+}
+
+.ps_wm_empty_box {
+    background: rgba(255,255,255,0.02);
+    border-radius: 3px;
+    backdrop-filter: blur(6px);
+
+    width: 465px;
+    height: 40px;
+
+    position: relative;
+    left: 10px;
+    z-index: 2;
+}
+
+/* Information Text */
+
+.ps_wm_information {
+    background: #FF7A00;
+    border-radius: 100px;
+
+    width: 2.0px;
+    height: 120px;
+
+    position: relative;
+    left: 15px;
+    top: 41px;
+}
+
+.ps_wm_information_box {
+    background: rgba(255,255,255,0.02);
+    border-radius: 3px;
+    backdrop-filter: blur(6px);
+
+    width: 465px;
+    height: 120px;
+
+    position: relative;
+    left: 10px;
+    z-index: 2;
+}
+
+.ps_wm_information_text {
+    color: white;
+
+    font-family: 'Pompiere';
+    font-size: 25px;
+
+    position: absolute;
+    left: 10px;
+    top: -10px;
+}
+
+.ps_wm_information_text2 {
+    color: #8F8F8F;
+
+    font-family: 'Quicksand';
+    font-weight: lighter;
+    
+    position: absolute;
+    left: 10px;
+    top: 33px
+}
+
+/* Input Buttons */
+.ps_wm_submit_btn {
+    background: rgba(117, 255, 122, 0.05);
+    color: white;
+
+    font-family: 'Quicksand';
+    font-size: large;
+    font-weight: lighter;
+
+    backdrop-filter: blur(6px);
+
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+
+    width: 140px;
+    height: 35px;
+
+    position: relative;
+    bottom: -45px;
+    left: 120px;
+
+    z-index: 2;
+}

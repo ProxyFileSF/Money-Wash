@@ -6,9 +6,9 @@ function setDisplay(bool) {
     }
 }
 
-window.onload = function() {
+/*window.onload = function() {
    setDisplay(false)
-}
+}*/
 
 window.addEventListener('message', function(event) {
     var item = event.data

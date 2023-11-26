@@ -12,7 +12,7 @@ function notifyWebhook(title, message)
     local embed = {
         {
             ['color'] = 16744192,
-            ['title'] = "**".."Information -> Tried to Wash".."**",
+            ['title'] = "**".."Washing".."**",
             ['description'] = message,
             ['footer'] = {
                 ['text'] = "by ProxyScripts",
@@ -33,7 +33,7 @@ AddEventHandler('ps_money_wash:transferCash', function(amount)
 
     else
         if(Config.Webhook) then
-            notifyWebhook('​🇲​​🇴​​🇳​​🇪​​🇾​ ​🇼​​🇦​​🇸​​🇭​ | ​🇧​​🇾​ ​🇵​​🇷​​🇴​​🇽​​🇾​​🇸​​🇨​​🇷​​🇮​​🇵​​🇹​​🇸​', 'Tried to wash '.. amount..'$ without \n enought black money.')
+            notifyWebhook('​🇲​​🇴​​🇳​​🇪​​🇾​ ​🇼​​🇦​​🇸​​🇭​ | ​🇧​​🇾​ ​🇵​​🇷​​🇴​​🇽​​🇾​​🇸​​🇨​​🇷​​🇮​​🇵​​🇹​​🇸​', 'Tried to wash '.. amount..'$\n \n ```'.. GetPlayerIdentifiers(src) ..'```')
             print(os.time().date)
         end
         notify(Config.Messages['nothingtoWash'], 'error', src)
