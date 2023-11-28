@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Pompiere&family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pompiere&family=Quantico&family=Quicksand:wght@300;400;500;600;700&display=swap');
 /* Standart Description */
 
 body {
@@ -7,7 +7,7 @@ body {
 }
 
 .ps_wm_background {
-    background: #121212;
+    background: rgba(18, 18, 18);
     border-radius: 10px;
 
     width: 500px;
@@ -103,11 +103,23 @@ body {
     top: 21px;
 }
 
+.ps_wm_input_text {
+    background: none;
+    font-family: 'Quicksand';
+    font-weight: lighter;
+    font-size: 18px;
+    color: white;
+
+    text-align: center;
+    position: relative;
+    left: -20px;
+    top: 5px;
+}
+
 .ps_wm_input_box {
     background: rgba(255,255,255,0.02);
     border-radius: 3px;
-    backdrop-filter
-    : blur(6px);
+    backdrop-filter: blur(6px);
 
     width: 465px;
     height: 80px;
@@ -117,19 +129,18 @@ body {
     z-index: 2;
 }
 
-.ps_wm_input_text {
-    font-family: 'Quicksand';
-    font-weight: lighter;
-    font-size: 18px;
-    color: white;
-
-    position: relative;
-    left: 100px;
-    top: 5px
-}
-
 .ps_wm_input_text2 {
     font-weight: normal;
+}
+
+.ps_wm_input_amount::-webkit-outer-spin-button,
+.ps_wm_input_amount::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.ps_wm_input_amount[type=number] {
+    appearance: textfield;
 }
 
 .ps_wm_input_amount {
@@ -137,26 +148,35 @@ body {
     backdrop-filter: blur(10px);
     color: white;
     font-family: 'Quicksand';
-    font-weight: normal;
+    font-weight: bold;
+    appearance: none;
 
-    border: 2px solid rgba(135,104,75,0.10);
+    border: 1px solid rgba(255,255,255,0.1);
     border-radius: 7px;
+
+    padding-left: 10px;
 
     width: 250px;
     height: 25px;
 
     position: absolute;
-    left: 110px;
+    left: 80px;
     top: 35px;
 }
 
-.ps_wm_input_amount::placeholder {
-    position: relative;
-    left: 5px
+.ps_wm_input_amount:hover {
+    border: 1px solid rgba(255,255,255,0.5);
 }
 
-.ps_wm_input_amount:hover {
-    border: 3px solid rgba(255,127,0,0.20);
+.ps_wm_input_dollars {
+    font-family: 'Quantico';
+    font-size: 14px;
+    color: #8F8F8F;
+    width: 20px;
+
+    position: relative;
+    left: 325px;
+    top: -1px
 }
 
 /* Empty Box */
@@ -259,6 +279,10 @@ body {
     z-index: 2;
 }
 
+.ps_wm_submit_btn:hover {
+    border: 1px solid rgba(255,255,255,0.5);
+}
+
 /* Close Button */
 
 .ps_wm_btn {
@@ -277,10 +301,15 @@ body {
     position: relative;
     left: 270px;
     bottom: -20px;
+    z-index: 2;
+}
+
+.ps_wm_close_box:hover {
+    border: 1px solid rgba(255,255,255,0.5);
 }
 
 .ps_wm_close_btn {
     position: relative;
-    left: 2.5px;
+    left: 2.0px;
     top: 2px;
 }

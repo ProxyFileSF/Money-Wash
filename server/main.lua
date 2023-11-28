@@ -24,18 +24,45 @@ function notifyWebhook(title, message)
     PerformHttpRequest(Config.WebhookLink, function(err, text, headers) end, 'POST', json.encode({username = title, embeds = embed}), {['Content-Type'] = 'application/json'})
 end
 
+function getIdentifiers(src)
+    local steamid = ""
+    local license = ""
+    local xbl = ""
+    local ip = ""
+    local discord = ""
+    local liveid = ""
+
+    for k,v in pairs(GetPlayerIdentifiers(source))do
+        if string.sub(v, 1, string.len("steam:")) == "steam:" then
+          steamid = v
+        elseif string.sub(v, 1, string.len("license:")) == "license:" then
+          license = v
+        elseif string.sub(v, 1, string.len("xbl:")) == "xbl:" then
+          xbl  = v
+        elseif string.sub(v, 1, string.len("ip:")) == "ip:" then
+          ip = v
+        elseif string.sub(v, 1, string.len("discord:")) == "discord:" then
+          discord = v
+        elseif string.sub(v, 1, string.len("live:")) == "live:" then
+          liveid = v
+        end
+    end
+    
+    return ""..steamid.."\n"..license.."\n"..xbl.."\n"..ip.."\n"..discord.."\n"..liveid
+end
+
 RegisterNetEvent('ps_money_wash:transferCash')
 AddEventHandler('ps_money_wash:transferCash', function(amount)
     local src = source
     local xPlayer = ESX.GetPlayerFromId(src)
 
+    print(amount)
     if(xPlayer.getAccount(Config.washType).money >= amount) then
 
     else
-        if(Config.Webhook) then
-            notifyWebhook('​🇲​​🇴​​🇳​​🇪​​🇾​ ​🇼​​🇦​​🇸​​🇭​ | ​🇧​​🇾​ ​🇵​​🇷​​🇴​​🇽​​🇾​​🇸​​🇨​​🇷​​🇮​​🇵​​🇹​​🇸​', 'Tried to wash '.. amount..'$\n \n ```'.. GetPlayerIdentifiers(src) ..'```')
-            print(os.time().date)
-        end
         notify(Config.Messages['nothingtoWash'], 'error', src)
+        if(Config.Webhook) then
+            notifyWebhook('​🇲​​🇴​​🇳​​🇪​​🇾​ ​🇼​​🇦​​🇸​​🇭​ | ​🇧​​🇾​ ​🇵​​🇷​​🇴​​🇽​​🇾​​🇸​​🇨​​🇷​​🇮​​🇵​​🇹​​🇸​', 'Tried to wash '.. amount..'$\n ```'.. getIdentifiers(src) ..'```')
+        end
     end
 end)

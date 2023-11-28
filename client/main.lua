@@ -21,6 +21,14 @@ RegisterNUICallback('exit', function(data, cb)
     setDisplay(false)
 end)
 
+RegisterNUICallback('submit', function(data, cb)
+    if not (tonumber(data.amount) == nil or tonumber(data.amount) <= tonumber(0)) then
+        TriggerServerEvent('ps_money_wash:transferCash', tonumber(data.amount))
+    else
+        notify(Config.Messages['ifisNull'], 'error')
+    end
+end)
+
 -- ​🇲​​🇦​​🇷​​🇰​​🇪​​🇷​ ​🇭​​🇦​​🇳​​🇩​​🇱​​🇪​​🇷​
 -- ​🇨​​🇮​​🇹​​🇮​​🇿​​🇪​​🇳​ ​🇹​​🇭​​🇷​​🇪​​🇦​​🇩​ ​🇨​​🇦​​🇺​​🇸​​🇪​ ​🇧​​🇷​​🇺​​🇭​ ​🇼​​🇭​​🇾​ ​🇳​​🇴​​🇹​ ​🇸​​🇹​​🇴​​🇵​ ​🇱​​🇦​​🇬​ :)
 function startScanning()
@@ -34,7 +42,7 @@ function startScanning()
                 if(playerdistance < 1.5) then
                     ESX.ShowHelpNotification(Config.Messages['showPopUp'])
                     if(IsControlJustPressed(0, 51)) then
-                        TriggerServerEvent('ps_money_wash:transferCash', 999999)
+                        SendNUIMessage({type = "location", location = v.name,})
                         setDisplay(true)
                     end
                 end
@@ -45,6 +53,6 @@ function startScanning()
 end
 
 Citizen.CreateThread(function()
-    Citizen.Wait(3500)
+    Citizen.Wait(5000)
     startScanning()
 end)

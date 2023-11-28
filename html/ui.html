@@ -2,20 +2,22 @@
 <html>
     <head>
         <link rel="stylesheet" href="style.css">
+        <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
         <script src="jquery-3.7.1.min.js"></script>
         <script src="app.js"></script>
         <title>by dsc.gg/proxyscripts</title>
     </head>
     <body>
-        <div class="ps_wm_background">
+        <div class="animate__animated animate__fadeIn ps_wm_background" id="ps_wm_background">
             <div class="ps_wm_bg_title">
                 <p class="ps_wm_bg_description_1">Money Wash - <span class="ps_wm_bg_description_2">by </span><span class="ps_wm_bg_description_3">Proxy</span><span class="ps_wm_bg_description_4">Script'</span><span class="ps_wm_bg_description_5">s</span></p>
-                <p class="ps_wm_bg_location">Located at:</p>
+                <p class="ps_wm_bg_location" id="ps_wm_location">Located at:</p>
             </div>
             <div class="ps_wm_input">
                 <div class="ps_wm_input_box">
                     <p class="ps_wm_input_text">How much do you want to <span class="ps_wm_input_text2">Wash</span>?</span></p>
-                    <input class="ps_wm_input_amount" type="number" placeholder="Amount"></input>
+                    <input class="ps_wm_input_amount" id="ps_wm_input_bx" type="number" placeholder="Amount"></input>
+                    <p class="ps_wm_input_dollars">$</p>
                 </div>
             </div>
             <div class="ps_wm_empty">
@@ -33,9 +35,9 @@
             </div>
             
             <div class="ps_wm_btn">
-                <input class="ps_wm_submit_btn" type="submit" value="Wash">
-                <div class="ps_wm_close_box">
-                    <img class="ps_wm_close_btn" src="assets/close_FILL0_wght400_GRAD0_opsz24 1.svg">
+                <input class="ps_wm_submit_btn" id="ps_wm_submit" type="submit" value="Wash">
+                <div class="ps_wm_close_box" id="ps_wm_close">
+                    <img class="ps_wm_close_btn" src="assets/close.svg">
                 </div>
             </div>
 

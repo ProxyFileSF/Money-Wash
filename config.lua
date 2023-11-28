@@ -13,8 +13,8 @@ Config.WebhookLink = 'https://discord.com/api/webhooks/1177963205222477875/vWXA2
 
 Config.washingMarkerColors = {r = 255, g = 127, b = 0, a = 0.5}
 Config.washingLocation = {
-    [1] = {name = "San Andreas Money Wash", location = vec3(123.5265, 121.1730, 112.7288)},
-    [2] = {name = "Los Angeles Money Wash", location = vec3(512, 512, 512)}
+    [1] = {name = "San Andreas Money Wash", location = vec3(221.5408, -854.3217, 30.0709)},
+    [2] = {name = "Los Angeles Money Wash", location = vec3(224.1880, -842.7039, 30.3006)}
 }
 
 Config.useCustomNotify = true -- ​🇮​​🇫​ ​🇾​​🇴​​🇺​ ​🇼​​🇦​​🇳​​🇹​ ​🇹​​🇴​ ​🇺​​🇸​​🇪​ ​🇦​ ​🇨​​🇺​​🇸​​🇹​​🇴​​🇲​ ​🇳​​🇴​​🇹​​🇮​​🇫​​🇮​​🇨​​🇦​​🇹​​🇮​​🇴​​🇳​ ​🇸​​🇾​​🇸​​🇹​​🇪​​🇲​
@@ -27,4 +27,5 @@ Config.NotifySystem = {
 Config.Messages = {
     ['showPopUp'] = 'Press ~INPUT_PICKUP~ to open the Money Wash',
     ['nothingtoWash'] = 'There is nothing to wash.',
+    ['ifisNull'] = 'Please use a valid number!',
 }
