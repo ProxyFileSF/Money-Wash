@@ -8,6 +8,7 @@ function notify(message, notifytype, src)
     end
 end
 
+-- ​🇳​​🇪​​🇻​​🇪​​🇷​ ​🇷​​🇪​​🇦​​🇱​​🇱​​🇾​ ​🇺​​🇸​​🇪​​🇩​ ​🇼​​🇪​​🇧​​🇭​​🇴​​🇴​​🇰​​🇸​, ​🇧​​🇺​​🇹​ ​🇮​​🇹​ ​🇼​​🇴​​🇷​​🇰​​🇸​
 function notifyWebhook(title, message)
     local embed = {
         {
@@ -24,6 +25,7 @@ function notifyWebhook(title, message)
     PerformHttpRequest(Config.WebhookLink, function(err, text, headers) end, 'POST', json.encode({username = title, embeds = embed}), {['Content-Type'] = 'application/json'})
 end
 
+-- ​🇻​​🇪​​🇷​​🇾​ ​🇻​​🇪​​🇷​​🇾​ ​🇻​​🇪​​🇷​​🇾​​🇾​​🇾​​🇾​​🇾​​🇾​​🇾​​🇾​ ​🇱​​🇴​​🇳​​🇬​
 function getIdentifiers(src)
     local steamid = ""
     local license = ""
@@ -51,14 +53,16 @@ function getIdentifiers(src)
     return ""..steamid.."\n"..license.."\n"..xbl.."\n"..ip.."\n"..discord.."\n"..liveid
 end
 
+-- ​🇦​​🇫​​🇹​​🇪​​🇷​ ​🇹​​🇭​​🇪​ ​🇺​​🇸​​🇪​​🇷​ ​🇭​​🇦​​🇸​ ​🇸​​🇪​​🇳​​🇩​ ​🇹​​🇭​​🇪​ ​🇹​​🇷​​🇦​​🇳​​🇸​​🇫​​🇪​​🇷​​🇨​​🇦​​🇸​​🇭​ ​🇹​​🇷​​🇮​​🇬​​🇬​​🇪​​🇷​
 RegisterNetEvent('ps_money_wash:transferCash')
 AddEventHandler('ps_money_wash:transferCash', function(amount)
     local src = source
     local xPlayer = ESX.GetPlayerFromId(src)
 
-    print(amount)
     if(xPlayer.getAccount(Config.washType).money >= amount) then
-
+        xPlayer.removeAccountMoney(Config.washType, amount)
+        xPlayer.addAccountMoney('money', amount)
+        notify(Config.Messages['successAtWash'], "success", src)
     else
         notify(Config.Messages['nothingtoWash'], 'error', src)
         if(Config.Webhook) then

@@ -32,13 +32,14 @@ $(document).on('click', '#ps_wm_submit', function(){
     return
 });
 
-$(document).on('click', '#ps_wm_background', function(){
+$(document).on('click', '#ps_wm_close', function(){
     $('#ps_wm_background').addClass("animate__animated animate__fadeOut")
-    sleep(2000).then(() => { $.post('https://ps_money_wash/exit', JSON.stringify({})) });
+    setTimeout(function() {
+        $.post('https://ps_money_wash/exit', JSON.stringify({}))
+    }, 750)
     return
 });
 
-/* Close UI with ESC */
 document.onkeyup = function(data) {
     if(data.which == 27) {
         $.post('https://ps_money_wash/exit', JSON.stringify({}))

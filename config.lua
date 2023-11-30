@@ -28,4 +28,5 @@ Config.Messages = {
     ['showPopUp'] = 'Press ~INPUT_PICKUP~ to open the Money Wash',
     ['nothingtoWash'] = 'There is nothing to wash.',
     ['ifisNull'] = 'Please use a valid number!',
+    ['successAtWash'] = 'You´ve successfully washed %s$' -- %​🇸​ ​🇲​​🇪​​🇦​​🇳​❜​🇸​ ​🇭​​🇴​​🇼​ ​🇲​​🇺​​🇨​​🇭​ ​🇭​​🇪​ ​🇼​​🇦​​🇸​​🇭​​🇪​​🇩​ (​🇭​​🇪​ ​🇬​​🇴​​🇹​)
 }

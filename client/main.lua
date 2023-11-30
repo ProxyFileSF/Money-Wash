@@ -29,13 +29,17 @@ RegisterNUICallback('submit', function(data, cb)
     end
 end)
 
+RegisterNetEvent('ps_money_wash:recievedEmote')
+AddEventHandler('ps_money_wash:recievedEmote', function()
+    
+end)
+
 -- ​🇲​​🇦​​🇷​​🇰​​🇪​​🇷​ ​🇭​​🇦​​🇳​​🇩​​🇱​​🇪​​🇷​
 -- ​🇨​​🇮​​🇹​​🇮​​🇿​​🇪​​🇳​ ​🇹​​🇭​​🇷​​🇪​​🇦​​🇩​ ​🇨​​🇦​​🇺​​🇸​​🇪​ ​🇧​​🇷​​🇺​​🇭​ ​🇼​​🇭​​🇾​ ​🇳​​🇴​​🇹​ ​🇸​​🇹​​🇴​​🇵​ ​🇱​​🇦​​🇬​ :)
-function startScanning()
-    local playerped = PlayerPedId()
+Citizen.CreateThread(function()
     while true do
         for i,v in ipairs(Config.washingLocation) do
-            local playerdistance = #(GetEntityCoords(playerped) - v.location)
+            local playerdistance = #(GetEntityCoords(PlayerPedId()) - v.location)
             if(playerdistance < 100) then
                 local x, y, z = table.unpack(v.location)
                 DrawMarker(1, x, y, z, 0, 0, 0, 0, 0, 0, 1.25, 1.25, 1.25, Config.washingMarkerColors.r, Config.washingMarkerColors.g, Config.washingMarkerColors.b, Config.washingMarkerColors.a, false, false, 2, false, nil, nil, false)
@@ -48,11 +52,6 @@ function startScanning()
                 end
             end
         end
-        Citizen.Wait(5)
+        Citizen.Wait(1)
     end
-end
-
-Citizen.CreateThread(function()
-    Citizen.Wait(5000)
-    startScanning()
 end)
