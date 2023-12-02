@@ -30,8 +30,20 @@ RegisterNUICallback('submit', function(data, cb)
 end)
 
 RegisterNetEvent('ps_money_wash:recievedEmote')
-AddEventHandler('ps_money_wash:recievedEmote', function()
-    
+AddEventHandler('ps_money_wash:recievedEmote', function(finishAmount)
+    setDisplay(false)
+    CreateThread(function()
+        local playerPed = PlayerPedId()
+        local x,y,z = table.unpack(GetEntityCoords(playerPed))
+
+        ESX.Streaming.RequestAnimDict('amb@medic@standing@tendtodead@idle_a', function()
+            TaskPlayAnim(playerPed, 'amb@medic@standing@tendtodead@idle_a', 'idle_a', 1.0, -1.0, Config.washTime, 1, 1, true, true, true)
+            Wait(Config.washTime)
+            notify(string.format(Config.Messages['successAtWash'], finishAmount), "success")
+            RemoveAnimDict('amb@medic@standing@tendtodead@idle_a')
+            ClearPedSecondaryTask(playerPed)
+        end)
+    end)
 end)
 
 -- ​🇲​​🇦​​🇷​​🇰​​🇪​​🇷​ ​🇭​​🇦​​🇳​​🇩​​🇱​​🇪​​🇷​

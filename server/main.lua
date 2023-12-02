@@ -2,9 +2,9 @@ ESX = exports["es_extended"]:getSharedObject()
 -- ​🇳​​🇴​​🇹​​🇮​​🇫​​🇮​​🇨​​🇦​​🇹​​🇮​​🇴​​🇳​ ​🇨​​🇭​​🇪​​🇨​​🇰​ ​🇦​​🇳​​🇩​ ​🇫​​🇺​​🇳​​🇨​​🇹​​🇮​​🇴​​🇳​
 function notify(message, notifytype, src)
     if(Config.useCustomNotify) then
-        TriggerEvent(Config.NotifySystem.notifyTrigger, src, Config.NotifySystem.notifyTitle, message, Config.NotifySystem.notifyTime, notifytype)
+        TriggerClientEvent(Config.NotifySystem.notifyTrigger, src, Config.NotifySystem.notifyTitle, message, Config.NotifySystem.notifyTime, notifytype)
     else
-        TriggerEvent('esx:showNotification', src, message, notifytype, time)
+        TriggerClientEvent('esx:showNotification', src, message, notifytype, time)
     end
 end
 
@@ -13,7 +13,7 @@ function notifyWebhook(title, message)
     local embed = {
         {
             ['color'] = 16744192,
-            ['title'] = "**".."Washing".."**",
+            ['title'] = "**".."Washing Attempt | Failed".."**",
             ['description'] = message,
             ['footer'] = {
                 ['text'] = "by ProxyScripts",
@@ -58,15 +58,22 @@ RegisterNetEvent('ps_money_wash:transferCash')
 AddEventHandler('ps_money_wash:transferCash', function(amount)
     local src = source
     local xPlayer = ESX.GetPlayerFromId(src)
+    local finishAmount = amount - (amount * (Config.vatWash/100))
 
     if(xPlayer.getAccount(Config.washType).money >= amount) then
         xPlayer.removeAccountMoney(Config.washType, amount)
-        xPlayer.addAccountMoney('money', amount)
-        notify(Config.Messages['successAtWash'], "success", src)
+        xPlayer.addAccountMoney('money', finishAmount)
+        print(finishAmount)
+        Citizen.CreateThread(function()
+            FreezeEntityPosition(GetPlayerPed(src), true)
+            Citizen.Wait(Config.washTime)
+            FreezeEntityPosition(GetPlayerPed(src), false)
+        end)
+        TriggerClientEvent('ps_money_wash:recievedEmote', src, finishAmount)
     else
         notify(Config.Messages['nothingtoWash'], 'error', src)
         if(Config.Webhook) then
-            notifyWebhook('​🇲​​🇴​​🇳​​🇪​​🇾​ ​🇼​​🇦​​🇸​​🇭​ | ​🇧​​🇾​ ​🇵​​🇷​​🇴​​🇽​​🇾​​🇸​​🇨​​🇷​​🇮​​🇵​​🇹​​🇸​', 'Tried to wash '.. amount..'$\n ```'.. getIdentifiers(src) ..'```')
+            notifyWebhook('​🇲​​🇴​​🇳​​🇪​​🇾​ ​🇼​​🇦​​🇸​​🇭​ | ​🇧​​🇾​ ​🇵​​🇷​​🇴​​🇽​​🇾​​🇸​​🇨​​🇷​​🇮​​🇵​​🇹​​🇸​', 'Someone tried washing ```'.. amount..'$``` with insufficient funds!'..'\n ```'.. getIdentifiers(src) ..'```')
         end
     end
 end)
