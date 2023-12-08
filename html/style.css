@@ -206,6 +206,49 @@ body {
     z-index: 2;
 }
 
+.ps_wm_blck_icon {
+    opacity: 900%;
+
+    position: absolute;
+    left: 70px;
+    top: 10px;
+}
+
+.ps_wm_blck_text {
+    font-family: 'Pompiere';
+    color: white;
+
+    position: relative;
+    left: 105px;
+    top: 14px;
+}
+
+.ps_wm_cash_icon {
+    opacity: 90%;
+
+    position: absolute;
+    left: 345px;
+    top: 10px;
+}
+
+.ps_wm_cash_text {
+    font-family: 'Pompiere';
+    color: white;
+
+    position: relative;
+    left: 235px;
+    top: 13px;
+}
+
+.ps_wm_refresh_icon {
+    opacity: 75%;
+
+    width: 17px;
+    position: absolute;
+    left: 200px;
+    top: 13px;
+}
+
 /* Information Text */
 
 .ps_wm_information {
