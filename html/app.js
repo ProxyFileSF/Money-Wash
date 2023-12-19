@@ -1,4 +1,4 @@
-const vat = null;
+var vat = 0;
 
 function setDisplay(bool) {
     if(bool) {
@@ -27,7 +27,8 @@ window.addEventListener('message', function(event) {
     }
 
     if(item.type == "vatWash") {
-        item.vatWash = vat;
+        vat = item.vatWash;
+        console.log(item.vatWash)
     }
 });
 
@@ -47,14 +48,17 @@ $(document).on('click', '#ps_wm_close', function(){
 });
 
 $(document).on('input', '#ps_wm_input_bx', function() {
-    if($('#ps_wm_input_bx').val() != null) {
-        var BlckVal = $('#ps_wm_input_bx').val() / vat
+    if($('#ps_wm_input_bx').val() != "") {
+        var prec = 1.0 - vat
+        var BlckVal = Number($('#ps_wm_input_bx').val()) * prec
         var CashVal = $('#ps_wm_input_bx').val()
-        $('#ps_wm_cash').text(String(CashVal))
-        $('#ps_wm_blck').text(String(BlckVal))
+    
+        console.log(BlckVal + " " + $('#ps_wm_input_bx').val() + " " + vat)
+        $('#ps_wm_cash').text(BlckVal+"€")
+        $('#ps_wm_blck').text(CashVal+"€")
     } else {
-        $('#ps_wm_cash').text('0$')
-        $('#ps_wm_blck').text('0$')
+        $('#ps_wm_cash').text('0€')
+        $('#ps_wm_blck').text('0€')
     }
 });
 

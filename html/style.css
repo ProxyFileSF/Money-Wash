@@ -206,37 +206,23 @@ body {
     z-index: 2;
 }
 
-.ps_wm_blck_icon {
-    opacity: 900%;
-
-    position: absolute;
-    left: 70px;
-    top: 10px;
-}
-
 .ps_wm_blck_text {
     font-family: 'Pompiere';
     color: white;
-
-    position: relative;
-    left: 105px;
-    top: 14px;
-}
-
-.ps_wm_cash_icon {
-    opacity: 90%;
+    text-align: right;
 
     position: absolute;
-    left: 345px;
-    top: 10px;
+    left: 105px;
+    top: 14px;
 }
 
 .ps_wm_cash_text {
     font-family: 'Pompiere';
     color: white;
+    text-align: left;
 
-    position: relative;
-    left: 235px;
+    position: absolute;
+    left: 315px;
     top: 13px;
 }
 
@@ -245,7 +231,7 @@ body {
 
     width: 17px;
     position: absolute;
-    left: 200px;
+    left: 210px;
     top: 13px;
 }
 

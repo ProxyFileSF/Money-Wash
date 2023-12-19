@@ -49,10 +49,6 @@ end)
 -- ​🇲​​🇦​​🇷​​🇰​​🇪​​🇷​ ​🇭​​🇦​​🇳​​🇩​​🇱​​🇪​​🇷​
 -- ​🇨​​🇮​​🇹​​🇮​​🇿​​🇪​​🇳​ ​🇹​​🇭​​🇷​​🇪​​🇦​​🇩​ ​🇨​​🇦​​🇺​​🇸​​🇪​ ​🇧​​🇷​​🇺​​🇭​ ​🇼​​🇭​​🇾​ ​🇳​​🇴​​🇹​ ​🇸​​🇹​​🇴​​🇵​ ​🇱​​🇦​​🇬​ :)
 Citizen.CreateThread(function()
-    SendNUIMessage({
-        type = "vatWash",
-        vatWash = Config.vatWash,
-    })
     while true do
         for i,v in ipairs(Config.washingLocation) do
             local playerdistance = #(GetEntityCoords(PlayerPedId()) - v.location)
@@ -62,6 +58,7 @@ Citizen.CreateThread(function()
                 if(playerdistance < 1.5) then
                     ESX.ShowHelpNotification(Config.Messages['showPopUp'])
                     if(IsControlJustPressed(0, 51)) then
+                        SendNUIMessage({type = "vatWash",vatWash = Config.vatWash,})
                         SendNUIMessage({type = "location", location = v.name,})
                         setDisplay(true)
                     end
