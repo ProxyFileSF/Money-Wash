@@ -28,7 +28,6 @@ window.addEventListener('message', function(event) {
 
     if(item.type == "vatWash") {
         vat = item.vatWash;
-        console.log(item.vatWash)
     }
 });
 
@@ -52,8 +51,7 @@ $(document).on('input', '#ps_wm_input_bx', function() {
         var prec = 1.0 - vat
         var BlckVal = Number($('#ps_wm_input_bx').val()) * prec
         var CashVal = $('#ps_wm_input_bx').val()
-    
-        console.log(BlckVal + " " + $('#ps_wm_input_bx').val() + " " + vat)
+
         $('#ps_wm_cash').text(BlckVal+"€")
         $('#ps_wm_blck').text(CashVal+"€")
     } else {
