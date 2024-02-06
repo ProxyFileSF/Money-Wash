@@ -8,10 +8,6 @@ function setDisplay(bool) {
     }
 }
 
-window.onload = function() {
-    setDisplay(false)
-}
-
 /* Enable / Disable UI from IG */
 window.addEventListener('message', function(event) {
     var item = event.data
