@@ -14,6 +14,13 @@ There is a possibility that this project will be continued in the future, but th
 
 ---
 
+## 📖 About
+
+This project was originally intended to be a marketplace resource but has been made public as I decided not to continue development.  
+You may find events or names from my store, **ProxyScripts.dev**, still present in the code. Feel free to remove or modify them as needed.
+
+---
+
 ## Features
 
 - 🤑 **Modern Design:** Sleek and user-friendly design for a money-washing system.  
@@ -41,7 +48,7 @@ There is a possibility that this project will be continued in the future, but th
 
 ## Configuration
 
-You can edit the `config.lua` file to adjust the following settings:  
+Edit the `config.lua` file to adjust the following settings:  
 
 - **Wash Rate:** Configure how much dirty money gets converted to clean money.  
 - **Wash Locations:** Set up multiple locations where players can launder money.  
